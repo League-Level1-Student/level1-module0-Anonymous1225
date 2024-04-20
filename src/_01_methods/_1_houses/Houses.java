@@ -10,19 +10,41 @@ public class Houses {
 	public static void main(String[] args) {
 		Robot rob = new Robot();
 		rob.hide();
-		rob.setSpeed(2000);
+		rob.setSpeed(20);
 		rob.penDown();
+		rob.setPenColor(0,255,255);
 		rob.setX(40);
 		rob.setY(500);
-		rob.move(200);
-		rob.turn(45);
-		rob.move(20);
-		rob.turn(90);
-		rob.move(20);
+		BH(rob);
+		rob.move(56);
+		SH(rob);
+		
 	}	
 	public void run() {
 
-
 		
+		
+	}
+	public static void BH(Robot R) {
+		
+
+		R.move(400);
+		R.turn(45);
+		R.move(40);
+		R.turn(90);
+		R.move(40);
+		R.turn(45);
+		R.move(400);
+		R.turn(-90);
+	}
+	public static void SH(Robot R) {
+		R.setAngle(0);
+		R.move(28);
+		R.turn(45);
+		R.move(40);
+		R.turn(90);
+		R.move(40);
+		R.turn(45);
+		R.move(28);
 	}
 }
