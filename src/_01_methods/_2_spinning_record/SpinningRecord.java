@@ -37,7 +37,8 @@ import processing.core.PImage;
 public class SpinningRecord extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 600;
-    
+  	 int x =300;
+  	 int y=0;
     Song song = new Song("awesomeTrack.mp3");
     PImage pictureOfRecord;
     int huh=0;
@@ -49,12 +50,17 @@ public class SpinningRecord extends PApplet {
     @Override
     public void setup() {
     	pictureOfRecord = loadImage("/Users/league/git/level1-module0-Anonymous1225/src/_01_methods/_2_spinning_record/vsauce.jpeg");
+    	 size(600,600);
+    	 pictureOfRecord.resize(600,600);
+
     }
 
     @Override
     public void draw() {
-    	image(pictureOfRecord, WIDTH, HEIGHT);
-    	ellipse(20,20,20,20);
+    	background(192,192,192);
+    	image(pictureOfRecord, 0, 0);
+   	 	rotateImage(pictureOfRecord,10);
+    	
     }
 
     static public void main(String[] args) {
