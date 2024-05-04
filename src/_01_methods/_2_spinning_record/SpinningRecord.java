@@ -10,30 +10,20 @@ import processing.core.PImage;
  * In the setup() method:
  * 2. Load a picture of a record using the loadImage() method:
  *    pictureOfRecord = loadImage("images/record.png");
- * 
  * 3. Call the image variable's resize() method to set the image's width and
  *    height to the window's width and height.
- * 
  * 4. Call the image() method to display the record image. Do you see it?
- * 
  * In the draw() method:
- * 
  * 5. Make the record spin by increasing the variable from step 1.
- * 
  * 6. Call the rotateImage() method to rotate record by the specified amount
  *    rotateImage(PImage image, int amountToRotate);
- * 
  * 7. Call the image() method to display the record image
  *    Make sure to put this code AFTER the rotateImage() method.
- * 
  * 8. Does the record rotate when the mouse is pressed?
- * 
  * 9. Modify your code so the record only spins when the mouse is pressed.
- * 
  * 10.Use the song.play() and song.stop() methods to play a song ONLY when
  *    the record is spinning.
  */
-
 public class SpinningRecord extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 600;
@@ -42,6 +32,7 @@ public class SpinningRecord extends PApplet {
     Song song = new Song("awesomeTrack.mp3");
     PImage pictureOfRecord;
     int huh=0;
+    boolean spin=false;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -57,9 +48,16 @@ public class SpinningRecord extends PApplet {
 
     @Override
     public void draw() {
-    	background(192,192,192);
-    	image(pictureOfRecord, 0, 0);
-   	 	rotateImage(pictureOfRecord,10);
+    	if (mousePressed) {
+    		spin=true;
+    	}
+    	if (spin==true) {
+    		huh=huh+10;
+    		song.play();
+    		background(192,192,192);
+    		rotateImage(pictureOfRecord,huh);
+    		image(pictureOfRecord, 0, 0);
+    	}
     	
     }
 
