@@ -51,22 +51,35 @@ public class RainGame extends PApplet {
     PImage bucket;
     int y;
     int x;
-
+    boolean g=false;
+    float a=45;
+    float b=2;
     // Sets the size of your canvas
     @Override
     public void settings() {
-        size(WIDTH, HEIGHT);
+    	size(600, 600);
     }
 
     @Override
     public void setup() {
-    	bucket = loadImage("images/mcbucket.png");
+    	
+    	bucket = loadImage("/Users/league/git/level1-module0-Anonymous1225/src/_01_methods/_3_rain_game/mcbucket.png");
     	bucket.resize(100, 100);
     }
 
     @Override
     public void draw() {
     	background(128,64,0);
+    	fill(0,128,192);
+    	ellipse(300,a,50,90);
+    	if (!g) {
+    	a+=b;
+    	b+=1;
+    	}
+    	if (a>=555) {
+    		a=45;
+    		b=1;
+    	}
     }
 
     static public void main(String[] args) {
