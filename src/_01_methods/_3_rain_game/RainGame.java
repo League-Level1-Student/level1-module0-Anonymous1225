@@ -1,5 +1,7 @@
 package _01_methods._3_rain_game;
 
+import java.util.Random;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -51,9 +53,11 @@ public class RainGame extends PApplet {
     PImage bucket;
     int y;
     int x;
-    boolean g=false;
+    int bukt_x=260;
+    int bukt_y=580;
     float a=45;
-    float b=2;
+    Random ran = new Random();
+    int c=ran.nextInt(511)+45;
     // Sets the size of your canvas
     @Override
     public void settings() {
@@ -65,20 +69,23 @@ public class RainGame extends PApplet {
     	
     	bucket = loadImage("/Users/league/git/level1-module0-Anonymous1225/src/_01_methods/_3_rain_game/mcbucket.png");
     	bucket.resize(100, 100);
+    	
     }
 
     @Override
     public void draw() {
     	background(128,64,0);
     	fill(0,128,192);
-    	ellipse(300,a,50,90);
-    	if (!g) {
-    	a+=b;
-    	b+=1;
-    	}
+    	ellipse(c,a,15,30);
+    	fill(95,95,95);
+    	rect(bukt_x,bukt_y,40,20);	
+    	rect(bukt_x,bukt_y-30,10,30);
+    	rect(bukt_x+30,bukt_y-30,10,30);
+    	fill(128,64,0);
+    	a+=10;
     	if (a>=555) {
+    		c=ran.nextInt(511)+45;
     		a=45;
-    		b=1;
     	}
     }
 
