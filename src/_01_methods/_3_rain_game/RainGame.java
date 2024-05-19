@@ -78,12 +78,31 @@ public class RainGame extends PApplet {
     	fill(0,128,192);
     	ellipse(c,a,15,30);
     	fill(95,95,95);
-    	rect(bukt_x,bukt_y,40,20);	
+    	noStroke();
+    	rect(bukt_x,bukt_y,50,20);	
     	rect(bukt_x,bukt_y-30,10,30);
-    	rect(bukt_x+30,bukt_y-30,10,30);
-    	fill(128,64,0);
-    	a+=10;
-    	if (a>=555) {
+    	rect(bukt_x+40,bukt_y-30,10,30);
+    	fill(0,0,0);
+    	rect(bukt_x,550,10,1);
+    	rect(bukt_x+40,550,10,1);
+    	rect(bukt_x,550,1,50);
+    	rect(bukt_x+40,550,1,30);
+    	rect(bukt_x+50,550,1,50);
+    	rect(bukt_x+10,550,1,30);
+    	rect(bukt_x+10,580,30,1);
+    	rect(bukt_x,600,50,-1);
+    	a+=2;
+    	if (a>=565 && c>=bukt_x && c<=bukt_x+32) {
+    		c=ran.nextInt(511)+45;
+    		a=45;
+    	}
+    	if(keyCode==LEFT) {
+    		bukt_x-=3;
+    	}
+    	if(keyCode==RIGHT) {
+    		bukt_x+=3;
+    	}
+    	if (a>=585) {
     		c=ran.nextInt(511)+45;
     		a=45;
     	}

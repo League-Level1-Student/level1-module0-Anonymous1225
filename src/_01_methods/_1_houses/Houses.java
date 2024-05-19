@@ -26,8 +26,7 @@ public class Houses {
 			rob.setAngle(90);
 			rob.move(20);
 		}
-		
-	}	
+	}
 	public void run() {
 
 		
