@@ -56,6 +56,8 @@ public class RainGame extends PApplet {
     int bukt_x=260;
     int bukt_y=580;
     float a=45;
+    int m=0;
+    boolean l =false;
     Random ran = new Random();
     int c=ran.nextInt(511)+45;
     // Sets the size of your canvas
@@ -89,12 +91,25 @@ public class RainGame extends PApplet {
     	rect(bukt_x+40,550,1,30);
     	rect(bukt_x+50,550,1,50);
     	rect(bukt_x+10,550,1,30);
-    	rect(bukt_x+10,580,30,1);
+    	rect(bukt_x+10,580,31,1);
     	rect(bukt_x,600,50,-1);
     	a+=2;
     	if (a>=565 && c>=bukt_x && c<=bukt_x+32) {
     		c=ran.nextInt(511)+45;
     		a=45;
+    		l=true;
+    		m=y;
+    		score+=1;
+    	}
+    	
+    	if (l==true) {
+    		fill(0,128,255);
+    		rect(bukt_x+11,bukt_y-30,29,30);
+    		fill(0,0,0);
+    		rect(bukt_x+10,bukt_y-30,30,1);
+    		if(y-m==80) {
+        		l=false;
+        	}
     	}
     	if(keyCode==LEFT) {
     		bukt_x-=3;
@@ -105,7 +120,12 @@ public class RainGame extends PApplet {
     	if (a>=585) {
     		c=ran.nextInt(511)+45;
     		a=45;
+    		
     	}
+    	fill(0, 0, 0);
+    	textSize(16);
+    	text("Score: " + score, 20, 20);
+    	y+=1;
     }
 
     static public void main(String[] args) {
