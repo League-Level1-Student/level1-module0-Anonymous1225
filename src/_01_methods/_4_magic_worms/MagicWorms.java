@@ -1,5 +1,6 @@
 package _01_methods._4_magic_worms;
 
+import java.util.Random;
 import processing.core.PApplet;
 
 /*
@@ -30,48 +31,52 @@ import processing.core.PApplet;
  *    "red value", and i as the "green value" for some extra color coolness.
  */
 public class MagicWorms extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
-    int o=10;
-    @Override
-    public void settings() {
-        size(WIDTH, HEIGHT);
-        
-    }
+	static final int WIDTH = 1000;
+	static final int HEIGHT = 500;
+	int o = 10;
+	int l = 0;
+	Random ran = new Random();
 
-    @Override
-    public void setup() {
-    	background(0, 0, 0);
-    }
+	@Override
+	public void settings() {
+		size(WIDTH, HEIGHT);
 
-    @Override
-    public void draw() {
-    	for(int c=0; c<200; c++) {
-    		noStroke();
-    		ellipse(c*o,c*o,o,o);
-    	}
-    }
-    
+	}
 
-    static public void main(String[] args) {
-        PApplet.main(MagicWorms.class.getName());
-    }
+	@Override
+	public void setup() {
+		background(0, 0, 0);
+	}
 
-    /*********************** DO NOT MODIFY THE CODE BELOW ********************/
-    float frequency = 0.001f;
-    float noiseInterval = PI;
+	@Override
+	public void draw() {
+		makeMagical();
+			for (int c = 0; c < 300; c++) {
+				fill(255, 255, 255);
+				noStroke();
+    		ellipse(getWormX(c),getWormY(c),o,o);
+			}
+		}
 
-    void makeMagical() {
-        fill(0, 0, 0, 10);
-        rect(0, 0, width, height);
-        noStroke();
-    }
+	static public void main(String[] args) {
+		PApplet.main(MagicWorms.class.getName());
+	}
 
-    float getWormX(int i) {
-        return map(noise(i * noiseInterval + frameCount * frequency), 0, 1, 0, width);
-    }
+	/*********************** DO NOT MODIFY THE CODE BELOW ********************/
+	float frequency = 0.001f;
+	float noiseInterval = PI;
 
-    float getWormY(int i) {
-        return map(noise(i * noiseInterval + 1 + frameCount * frequency), 0, 1, 0, height);
-    }
+	void makeMagical() {
+		fill(0, 0, 0, 10);
+		rect(0, 0, width, height);
+		noStroke();
+	}
+
+	float getWormX(int i) {
+		return map(noise(i * noiseInterval + frameCount * frequency), 0, 1, 0, width);
+	}
+
+	float getWormY(int i) {
+		return map(noise(i * noiseInterval + 1 + frameCount * frequency), 0, 1, 0, height);
+	}
 }
