@@ -24,6 +24,7 @@ public class FlappyBird extends PApplet {
     	noStroke();
     	background(0,200,255);
     	fill(255,55,0);
+    	rect(x,0,20,500);
     	fill(0, 255, 0);
     	ellipse(20, b, 20,10);
     	if(mousePressed) {
@@ -31,9 +32,11 @@ public class FlappyBird extends PApplet {
     	}
     	v-=1;
     	b-=v;
-    	rect(x,0,20,500);
     	System.out.println(b);
-    	x+=1;
+    	x-=1;
+    	if (x==0) {
+    		x=780;
+    	}
     }
     static public void main(String[] args) {
         PApplet.main(FlappyBird.class.getName());
