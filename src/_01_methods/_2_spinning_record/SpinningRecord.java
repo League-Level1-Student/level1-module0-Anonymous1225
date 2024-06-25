@@ -52,7 +52,7 @@ public class SpinningRecord extends PApplet {
     		spin=true;
     	}
     	if (spin==true) {
-    		huh=huh+10;
+    		huh=huh+181;
     		song.play();
     		background(192,192,192);
     		rotateImage(pictureOfRecord,huh);

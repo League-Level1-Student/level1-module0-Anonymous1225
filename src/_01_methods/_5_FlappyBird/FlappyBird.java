@@ -29,8 +29,8 @@ public class FlappyBird extends PApplet {
 	@Override
 	public void setup() {
 		background(0, 200, 255);
-    	pig = loadImage("/Level1-Module0/src/_01_methods/_5_FlappyBird/chonk.webp");
-    	pig.resize(30, 30);
+    	pig = loadImage("/Users/league/Downloads/realchonk.png");
+    	pig.resize(80, 80);
 	}
 
 	@Override
@@ -39,13 +39,13 @@ public class FlappyBird extends PApplet {
 			v -= 1;
 			b -= v;
 			x -= 2;
-			noStroke();
 			background(0, 200, 255);
+			image (pig, 20, b);
+			noStroke();
 			fill(255, 55, 0);
 			rect(x, 0, 20, h);
 			rect(x, h + l, 20, 600);
 			fill(0, 255, 0);
-			ellipse(20, b, 20, 10);
 			if (mousePressed) {
 				v = 10;
 			}
@@ -57,12 +57,13 @@ public class FlappyBird extends PApplet {
 			if (b<=0) {
 				b=10;
 			}
-			if (b >= 630) {
+			if (b >= 700) {
 				ga = false;
 				JOptionPane.showMessageDialog(null, "Game over!");
 			}
 			if (x==30) {
 				score+=1;
+				System.out.println(score);	
 			}
 			if (x<=30&&b<=h) {
 				ga = false;
