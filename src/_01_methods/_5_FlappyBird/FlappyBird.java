@@ -15,8 +15,8 @@ public class FlappyBird extends PApplet {
 	int b = 400;
 	int v = 0;
 	int x = 200;
-	int h = ran.nextInt(350) + 50;
-	int l = ran.nextInt(575 - h) + 25;
+	int h = ran.nextInt(400)+1;
+	int l = ran.nextInt(400-h)+200;
 	int score=0;
     PImage pig;
 	boolean ga = true;
@@ -29,7 +29,7 @@ public class FlappyBird extends PApplet {
 	@Override
 	public void setup() {
 		background(0, 200, 255);
-    	pig = loadImage("/Users/league/Downloads/realchonk.png");
+    	pig = loadImage("/Users/league/Downloads/chonky.png");
     	pig.resize(80, 80);
 	}
 
@@ -44,32 +44,32 @@ public class FlappyBird extends PApplet {
 			noStroke();
 			fill(255, 55, 0);
 			rect(x, 0, 20, h);
-			rect(x, h + l, 20, 600);
+			rect(x, l+h, 20, 600);
 			fill(0, 255, 0);
 			if (mousePressed) {
 				v = 10;
 			}
-			if (x <= 0) {
+			if (x <= -20) {
 				x = 780;
-				h = ran.nextInt(350) + 50;
-				l = ran.nextInt(200) + 50;
+				h = ran.nextInt(400)+1;
+				l = ran.nextInt(400-h)+200;
 			}
 			if (b<=0) {
 				b=10;
 			}
-			if (b >= 700) {
+			if (b >= 620 &&b<=h) {
 				ga = false;
 				JOptionPane.showMessageDialog(null, "Game over!");
 			}
-			if (x==30) {
+			if (x==100) {
 				score+=1;
 				System.out.println(score);	
 			}
-			if (x<=30&&b<=h) {
+			if (x<=30&&b<=h&&x>=0) {
 				ga = false;
 				JOptionPane.showMessageDialog(null, "Game over!");				
 			}
-			if (x<=30&&b>=h+l) {
+			if (x<=30&&b>=h+l&&x>=0) {
 				ga = false;
 				JOptionPane.showMessageDialog(null, "Game over!");	
 			}

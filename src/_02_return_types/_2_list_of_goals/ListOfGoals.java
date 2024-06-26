@@ -10,7 +10,15 @@ public class ListOfGoals {
 	
 	public static void main(String[] args) {
 		//1. Call the appropriate method to make your list of goals
-		
+		createListOfGoals();
+		JOptionPane.showMessageDialog(null,getListOfGoals());
+		JOptionPane.showMessageDialog(null, getNumberOfGoals());
+		if (isManyGoals()){
+			JOptionPane.showMessageDialog(null, "Good Luck ;)");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Go outside *Dies from lack of sunlight*");
+		}
 		//2. Call the appropriate method to get your list of goals, 
 		//   so you can use a pop-up to display them
 		

@@ -17,7 +17,15 @@ public class FinishLine {
 	
 	public static void main(String[] args) {
 		//1. Call the drawFinishLine() method
-		
+		drawFinishLine();
+		crazyMove();
+		getTotalDistance();
+		 if(hasCrossedFinishLine()) {
+			 JOptionPane.showMessageDialog(null, "I crossed by going "+String.valueOf(getTotalDistance())+"Feet");
+		 }
+		 else {
+			 JOptionPane.showMessageDialog(null, "I didn't cross :(");
+		 }
 		//2. Call the crazyMove() method to move the robot
 		
 		//3. Call the getTotalDistance() and save what is returned into a variable
