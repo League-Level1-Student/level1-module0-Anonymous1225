@@ -13,14 +13,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MyFirstSwingGUI {
-	public void run() {
+	   public static void main(String[] args) {
 
 		// 1. Create and initialize an object of the JFrame class
 		JFrame frame = new JFrame();
-		
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 2. Set your JFrame object to be visible
-
+		JPanel panel = new JPanel();
+		JLabel label= new JLabel();
+		label.setText("hiii");
+		frame.add(panel);
+		panel.add(label);
+		frame.pack();
+		label.setIcon(loadImage());
+		frame.pack();
 		// 3. Run your program. Do you see your window? It's probably very
 		// small.
 
@@ -39,7 +46,7 @@ public class MyFirstSwingGUI {
 		// 10. Pack your JFrame.
 
 		// 11. Run your program again. Do you see your message.
-
+	
 		// 12. Use the loadImage method to set the icon of the JLabel object.
 
 		// 13. Re-pack the JFrame object.
@@ -48,7 +55,7 @@ public class MyFirstSwingGUI {
 
 	}
 
-	public ImageIcon loadImage() {
+	static public ImageIcon loadImage() {
 		try {
 			return new ImageIcon(ImageIO.read(new MyFirstSwingGUI().getClass().getResourceAsStream("java.png")));
 		} catch (IOException e) {

@@ -16,13 +16,15 @@ import javax.swing.JOptionPane;
 
 public class PhotoQuiz {
 
-	public void run() {
+	public static void main(String[] args) {
 
-		JFrame quizWindow = new JFrame();
-		quizWindow.setVisible(true);
+		JFrame quiz = new JFrame();
+		JLabel label = new JLabel();
+		quiz.setVisible(true);
 		// This will make sure the program exits when you close the window
-		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		quiz.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		String pig="https://i.ytimg.com/vi/eDb25pwhtno/maxresdefault.jpg";
+		Component piggy=createImage(pig);
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
@@ -30,9 +32,17 @@ public class PhotoQuiz {
 		// 2. create a variable of type "Component" that will hold your image
 
 		// 3. use the "createImage()" method below to initialize your Component
-
+		
 		// 4. add the image to the quiz window
-
+		quiz.add(piggy);
+		quiz.pack();
+		 String AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA = JOptionPane.showInputDialog("Are guinea pigs tasty");
+		 if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Yes")||AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("yes")) {
+			 JOptionPane.showMessageDialog(null, "Correcto");
+		 }
+		 else {
+			 JOptionPane.showMessageDialog(null, "You won't go to college! :(");
+		 }
 		// 5. call the pack() method on the quiz window
 
 		// 6. ask a question that relates to the image
@@ -54,10 +64,10 @@ public class PhotoQuiz {
 		// 13. ask another question
 
 		// 14+ check answer, say if correct or incorrect, etc.
-
 	}
+	
 
-	private Component createImage(String imageUrl) {
+	static private Component createImage(String imageUrl) {
 		JLabel imageLabel = new JLabel();
 		URL url;
 		try {
