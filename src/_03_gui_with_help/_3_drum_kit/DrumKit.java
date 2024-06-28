@@ -6,6 +6,7 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -17,7 +18,8 @@ public class DrumKit implements MouseListener {
 
     public void run() {
         //  Make a JFrame variable and initialize it using "new JFrame()"
-
+    	JFrame guineapig= new JFrame();
+    	guineapig.setVisible(true);
         //  Make the frame visible and
         // set its default close operation to JFrame.EXIT_ON_CLOSE
 

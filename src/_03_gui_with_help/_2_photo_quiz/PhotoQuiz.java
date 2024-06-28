@@ -19,12 +19,15 @@ public class PhotoQuiz {
 	public static void main(String[] args) {
 
 		JFrame quiz = new JFrame();
-		JLabel label = new JLabel();
 		quiz.setVisible(true);
 		// This will make sure the program exits when you close the window
 		quiz.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		String pig="https://i.ytimg.com/vi/eDb25pwhtno/maxresdefault.jpg";
-		Component piggy=createImage(pig);
+		String pig = "https://i.ytimg.com/vi/eDb25pwhtno/maxresdefault.jpg";
+		String mc = "https://static.theprint.in/wp-content/uploads/2020/01/Albert-Einstein-696x392.jpg?compress=true&quality=80&w=376&dpr=2.6";
+		String bara = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg/1200px-Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg";
+		Component flamingo = createImage(mc);
+		Component piggy = createImage(pig);
+		Component capy = createImage(bara);
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
@@ -32,17 +35,41 @@ public class PhotoQuiz {
 		// 2. create a variable of type "Component" that will hold your image
 
 		// 3. use the "createImage()" method below to initialize your Component
-		
+
 		// 4. add the image to the quiz window
 		quiz.add(piggy);
 		quiz.pack();
-		 String AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA = JOptionPane.showInputDialog("Are guinea pigs tasty");
-		 if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Yes")||AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("yes")) {
-			 JOptionPane.showMessageDialog(null, "Correcto");
-		 }
-		 else {
-			 JOptionPane.showMessageDialog(null, "You won't go to college! :(");
-		 }
+		String AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA = JOptionPane
+				.showInputDialog("Are guinea pigs tasty");
+		if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Yes")
+				|| AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("yes")) {
+			JOptionPane.showMessageDialog(null, "Correcto");
+		} else {
+			JOptionPane.showMessageDialog(null, "You won't go to college!:(");
+			System.exit(0);
+		}
+
+		quiz.remove(piggy);
+		quiz.add(flamingo);
+		quiz.pack();
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA = JOptionPane.showInputDialog("who is this man?");
+		if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Albert Einstein")) {
+			JOptionPane.showMessageDialog(null, "Correcto");
+		} else {
+			JOptionPane.showMessageDialog(null, "You won't go to college! :(");
+			System.exit(0);
+		}
+		quiz.remove(flamingo);
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA = JOptionPane.showInputDialog("What is the biggest rodent");
+		if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Capybara")|| AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("capybara")) {
+			quiz.add(capy);
+			quiz.pack();
+			JOptionPane.showMessageDialog(null, "Correcto");
+		} else {
+			JOptionPane.showMessageDialog(null, "You won't go to college! :(");
+			System.exit(0);
+		}
+		// g
 		// 5. call the pack() method on the quiz window
 
 		// 6. ask a question that relates to the image
@@ -65,7 +92,6 @@ public class PhotoQuiz {
 
 		// 14+ check answer, say if correct or incorrect, etc.
 	}
-	
 
 	static private Component createImage(String imageUrl) {
 		JLabel imageLabel = new JLabel();
@@ -78,7 +104,7 @@ public class PhotoQuiz {
 			// TODO Auto-generated catch block
 			JOptionPane.showMessageDialog(null, "I can't find your image!!");
 		}
-		
+
 		return imageLabel;
 	}
 
