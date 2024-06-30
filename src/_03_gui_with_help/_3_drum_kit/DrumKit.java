@@ -9,17 +9,30 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 import game_tools.Sound;
 
 public class DrumKit implements MouseListener {
     static boolean canPlaySounds = true; // Set this to false if your computer cannot play sounds
     JLabel drumLabel;
-
-    public void run() {
+    public static void main(String[] args) {
+	   DrumKit drums = new DrumKit();
+	   drums.run();
+    }
+   
+	public void run() {
         //  Make a JFrame variable and initialize it using "new JFrame()"
     	JFrame guineapig= new JFrame();
+    	JPanel yo = new JPanel();
+    	JLabel heho = new JLabel();
     	guineapig.setVisible(true);
+    	guineapig.add(yo);
+    	JLabel hihi=createLabelImage("snare.jpg");
+    	heho.add(hihi);
+    	yo.add(hihi);
+    	guineapig.pack();
+    	guineapig.addMouseListener(this);
         //  Make the frame visible and
         // set its default close operation to JFrame.EXIT_ON_CLOSE
 
@@ -59,7 +72,7 @@ public class DrumKit implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         // Print "mouse clicked" to the console. Run your program and watch
         // the console to see when this is printed.
-
+    	System.out.println("mouseclicked");
         //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
                                                         // that the mouse
                                                         // clicked on
