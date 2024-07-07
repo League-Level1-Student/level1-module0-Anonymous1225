@@ -1,5 +1,6 @@
 package _03_gui_with_help._3_drum_kit;
 
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
@@ -23,6 +24,7 @@ public class DrumKit implements MouseListener {
    
 	public void run() {
         //  Make a JFrame variable and initialize it using "new JFrame()"
+
     	JFrame guineapig= new JFrame();
     	JPanel yo = new JPanel();
     	JLabel heho = new JLabel();
@@ -32,7 +34,13 @@ public class DrumKit implements MouseListener {
     	heho.add(hihi);
     	yo.add(hihi);
     	guineapig.pack();
-    	guineapig.addMouseListener(this);
+    	hihi.addMouseListener(this);
+    	yo.setLayout(new GridLayout());
+    	JLabel ahh=createLabelImage("cymbal.jpg");
+    	heho.add(ahh);
+    	yo.add(ahh);
+    	guineapig.pack();
+
         //  Make the frame visible and
         // set its default close operation to JFrame.EXIT_ON_CLOSE
 
@@ -57,7 +65,6 @@ public class DrumKit implements MouseListener {
         // Run your program. Do you see your drum image?
 
         // Add this MouseListener to drumLabel
-
         // *** Write the code in the mouseClicked() method below
 
         //  Set the layout of the panel to "new GridLayout()"
@@ -73,10 +80,10 @@ public class DrumKit implements MouseListener {
         // Print "mouse clicked" to the console. Run your program and watch
         // the console to see when this is printed.
     	System.out.println("mouseclicked");
+    	playSound("drum.wav");
         //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
                                                         // that the mouse
                                                         // clicked on
-
         // You can use the drum sound provided ("drum.wav") or
         // download another drum sound (.wav) and drop it into the Drum Kit package.
         // You can find sounds on freesound.org, and to download from there, you must log in

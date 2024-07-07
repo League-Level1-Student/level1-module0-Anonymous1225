@@ -3,7 +3,7 @@ package _01_methods._2_spinning_record;
 import game_tools.Sound;
 import processing.core.PApplet;
 import processing.core.PImage;
-
+import java.util.Random;
 /*
  * Goal: Make a record spin and play music!
  * 1. Make an int variable to keep track of how much the record will spin.
@@ -25,6 +25,7 @@ import processing.core.PImage;
  *    the record is spinning.
  */
 public class SpinningRecord extends PApplet {
+    Random ran = new Random();
     static final int WIDTH = 600;
     static final int HEIGHT = 600;
   	 int x =300;
@@ -52,7 +53,7 @@ public class SpinningRecord extends PApplet {
     		spin=true;
     	}
     	if (spin==true) {
-    		huh=huh+181;
+    		huh=huh+ran.nextInt(180)+1;
     		song.play();
     		background(192,192,192);
     		rotateImage(pictureOfRecord,huh);
