@@ -17,6 +17,8 @@ import game_tools.Sound;
 public class DrumKit implements MouseListener {
     static boolean canPlaySounds = true; // Set this to false if your computer cannot play sounds
     JLabel drumLabel;
+	JLabel hihi=createLabelImage("snare.jpg");
+	JLabel ahh=createLabelImage("cymbal.jpg");
     public static void main(String[] args) {
 	   DrumKit drums = new DrumKit();
 	   drums.run();
@@ -30,13 +32,12 @@ public class DrumKit implements MouseListener {
     	JLabel heho = new JLabel();
     	guineapig.setVisible(true);
     	guineapig.add(yo);
-    	JLabel hihi=createLabelImage("snare.jpg");
     	heho.add(hihi);
     	yo.add(hihi);
     	guineapig.pack();
     	hihi.addMouseListener(this);
     	yo.setLayout(new GridLayout());
-    	JLabel ahh=createLabelImage("cymbal.jpg");
+    	ahh.addMouseListener(this);
     	heho.add(ahh);
     	yo.add(ahh);
     	guineapig.pack();
@@ -80,7 +81,13 @@ public class DrumKit implements MouseListener {
         // Print "mouse clicked" to the console. Run your program and watch
         // the console to see when this is printed.
     	System.out.println("mouseclicked");
-    	playSound("drum.wav");
+    	if (e.getSource().equals(hihi)) {
+    		playSound("drum.wav");
+    	}
+    	else {
+    		playSound("cymbal.wav");
+    	}
+
         //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
                                                         // that the mouse
                                                         // clicked on
