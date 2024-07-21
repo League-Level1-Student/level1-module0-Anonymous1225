@@ -25,7 +25,7 @@ public class BodyPartQuiz {
 	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
 	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
 	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
-
+	String uhhhhhhhhhhhhhhhhhhhhhhhh = "controversy.jpg";
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
 
@@ -51,14 +51,14 @@ public class BodyPartQuiz {
 
 	private void startQuiz() {
 
-		// 1. Make an int variable to hold the score.
+		// 1. Make an int  variable to hold the score.
 		int score=0;
 		// 2. Set the size of the window in the initializeGui() method 
-
+		initializeGui();
 		// 4. Ask the user who this person is and store their answer
 		
 		String guess = JOptionPane.showInputDialog("who is this?");
-		if (guess.equals("stomach")) {
+		if (guess.equals("Dr Disrespect")) {
 			System.out.println(1);
 		}
 		// 5. Check their answer. If they guessed correctly:
@@ -99,6 +99,8 @@ public class BodyPartQuiz {
 		imageLabel = loadImage(thirdImage);
 		imageList.add(imageLabel);
 		imageLabel = loadImage(fourthImage);
+		imageList.add(imageLabel);
+		imageLabel = loadImage(uhhhhhhhhhhhhhhhhhhhhhhhh);
 		imageList.add(imageLabel);
 	}
 
