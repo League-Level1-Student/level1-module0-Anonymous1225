@@ -21,11 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
-	String uhhhhhhhhhhhhhhhhhhhhhhhh = "controversy.jpg";
+	String firstImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String secondImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
 
@@ -42,7 +41,7 @@ public class BodyPartQuiz {
 		
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(200, 100);
 
 
 		showNextImage();
@@ -54,22 +53,33 @@ public class BodyPartQuiz {
 		// 1. Make an int  variable to hold the score.
 		int score=0;
 		// 2. Set the size of the window in the initializeGui() method 
-		initializeGui();
+		//initializeGui();
 		// 4. Ask the user who this person is and store their answer
 		
 		String guess = JOptionPane.showInputDialog("who is this?");
-		if (guess.equals("Dr Disrespect")) {
-			System.out.println(1);
+		if (guess.equals("Arnold Schwarzenegger")) {
+			score++;
 		}
+		System.out.println(score);
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
 
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
-
+		String guess1 = JOptionPane.showInputDialog("who is this?");
+		if (guess1.equals("Leonardo Decaprio")) {
+			score++;
+		}
+		System.out.println(score);
+		showNextImage();
+		window.setSize(150, 150);
+		String guess2 =JOptionPane.showInputDialog("who is this?");
+		if (guess2.equals("Morgan Freeman")) {
+			score++;
+		}
+		System.out.println(score);
 		// 8. .... repeat 4-7 for all your images.....
 
 		// 9. Show them their current score
@@ -79,6 +89,7 @@ public class BodyPartQuiz {
 	public void showNextImage() {
 		panel.removeAll();
 		panel.add(getNextImage());
+		//window.pack();
 		window.setVisible(true);
 	}
 
@@ -100,13 +111,12 @@ public class BodyPartQuiz {
 		imageList.add(imageLabel);
 		imageLabel = loadImage(fourthImage);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(uhhhhhhhhhhhhhhhhhhhhhhhh);
-		imageList.add(imageLabel);
 	}
 
 	private JLabel getNextImage() {
-		if (imageIterator.hasNext())
+		if (imageIterator.hasNext()) {
 			return imageIterator.next();
+		}
 
 		return new JLabel("No more images");
 	}
