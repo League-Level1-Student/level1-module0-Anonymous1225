@@ -21,10 +21,11 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
-	String secondImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
-	String fourthImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
+	String firstImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String secondImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
+	String fifthImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/rick.png";
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
 
@@ -57,7 +58,7 @@ public class BodyPartQuiz {
 		// 4. Ask the user who this person is and store their answer
 		
 		String guess = JOptionPane.showInputDialog("who is this?");
-		if (guess.equals("Arnold Schwarzenegger")) {
+		if (guess.toLowerCase().equals("arnold schwarzenegger") || guess.toLowerCase().equals("arnold") || guess.toLowerCase().equals("shwarzenegger")) {
 			score++;
 		}
 		System.out.println(score);
@@ -69,17 +70,32 @@ public class BodyPartQuiz {
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 		String guess1 = JOptionPane.showInputDialog("who is this?");
-		if (guess1.equals("Leonardo Decaprio")) {
+		if (guess1.toLowerCase().equals("leonardo decaprio")||guess1.toLowerCase().equals("leonardo")||guess1.toLowerCase().equals("decaprio")) {
 			score++;
 		}
 		System.out.println(score);
 		showNextImage();
 		window.setSize(150, 150);
 		String guess2 =JOptionPane.showInputDialog("who is this?");
-		if (guess2.equals("Morgan Freeman")) {
+		if (guess2.toLowerCase().equals("morgan freeman")||guess2.toLowerCase().equals("morgan")||guess2.toLowerCase().equals("freeman")) {
 			score++;
 		}
 		System.out.println(score);
+		showNextImage();
+		window.setSize(250, 100);
+		String guess3=JOptionPane.showInputDialog("Who is this");
+		if (guess3.toLowerCase().equals("jack black") || guess3.toLowerCase().equals("jack")||guess3.toLowerCase().equals("black")) {
+			score++;
+		}
+		System.out.println(score);
+		showNextImage();
+		String guess4=JOptionPane.showInputDialog("Who is this");
+		if (guess4.toLowerCase().equals("rick astley")|| guess4.toLowerCase().equals("rick")||guess4.toLowerCase().equals("astley")) {
+			score++;
+		}
+		System.out.println(score);
+		
+		
 		// 8. .... repeat 4-7 for all your images.....
 
 		// 9. Show them their current score
@@ -110,6 +126,8 @@ public class BodyPartQuiz {
 		imageLabel = loadImage(thirdImage);
 		imageList.add(imageLabel);
 		imageLabel = loadImage(fourthImage);
+		imageList.add(imageLabel);
+		imageLabel = loadImage(fifthImage);
 		imageList.add(imageLabel);
 	}
 
