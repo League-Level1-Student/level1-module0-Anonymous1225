@@ -21,11 +21,11 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
-	String secondImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
-	String fourthImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
-	String fifthImage = "/Users/league/git/level1-module0-Anonymous1225-2/src/_03_gui_with_help/_4_body_part_quiz/rick.png";
+	String firstImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String secondImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
+	String fifthImage = "/Users/league/git/level1-module0-Anonymous1225/src/_03_gui_with_help/_4_body_part_quiz/rick.png";
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
 
