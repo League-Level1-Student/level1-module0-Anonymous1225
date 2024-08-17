@@ -1,5 +1,7 @@
 package _03_gui_with_help._5_duelling_buttons;
 
+import java.awt.Component;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2021
  *    Level 1
@@ -8,9 +10,15 @@ package _03_gui_with_help._5_duelling_buttons;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class DuellingButtons implements ActionListener {
@@ -23,10 +31,11 @@ public class DuellingButtons implements ActionListener {
 
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-
+	String freddy="src/_03_gui_with_help/_5_duelling_buttons/Power_outage.png";
+	Component lebox=createImage(freddy);
 	public void run() {
-
 		// 1. Add the panel to the frame
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(panel);
 		// 2. Make the frame visible
 		frame.setVisible(true);
@@ -43,8 +52,7 @@ public class DuellingButtons implements ActionListener {
 		// 8. Add the rightButton to the panel
 		panel.add(rightButton);
 		// 9. Pack the frame
-	//	if (heha==false) {
-	//	}
+			frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
 		frame.setTitle("Demanding Buttons");
 	}
@@ -52,16 +60,18 @@ public class DuellingButtons implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
-
+		frame.setSize(700,500);
 		/* If the buttonPressed was the leftButton.... */
-		if (buttonPressed.equals(leftButton)){
+		if (buttonPressed==(leftButton)){
 			leftButton.setPreferredSize(SMALL);
 			rightButton.setPreferredSize(BIG);
 		}
-		else if (buttonPressed.equals(rightButton)) {
+		else if (buttonPressed==(rightButton)) {
 			rightButton.setPreferredSize(SMALL);
 			leftButton.setPreferredSize(BIG);
+			leftButton.setText("You should have listened");
 		}
+		frame.add(lebox);
 		// Set the text of the rightButton to "No, click Me!"
 		// Set the PREFERRED size of the rightButton to BIG
 		// Set the text of the leftButton to "Click Me!"
@@ -75,4 +85,19 @@ public class DuellingButtons implements ActionListener {
 
 		//frame.pack();
 	}
+	static private Component createImage(String imageUrl) {
+		JLabel imageLabel = new JLabel();
+		URL url;
+		try {
+			url = new URL(imageUrl);
+			Icon icon = new ImageIcon(url);
+			imageLabel.setIcon(icon);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "I can't find your image!!");
+		}
+
+		return imageLabel;
+	}
+
 }
