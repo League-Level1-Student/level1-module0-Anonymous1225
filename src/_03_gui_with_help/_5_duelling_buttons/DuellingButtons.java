@@ -21,6 +21,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import game_tools.Sound;
+
 public class DuellingButtons implements ActionListener {
 	boolean heha=false;
 	JButton leftButton = new JButton();
@@ -28,7 +30,7 @@ public class DuellingButtons implements ActionListener {
 
 	Dimension BIG = new Dimension(400, 400);
 	Dimension SMALL = new Dimension(200, 200);
-
+    Song song = new Song("musicbox.mp3");
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	String freddy="src/_03_gui_with_help/_5_duelling_buttons/Power_outage.png";
@@ -62,42 +64,53 @@ public class DuellingButtons implements ActionListener {
 		JButton buttonPressed = (JButton) arg0.getSource();
 		frame.setSize(700,500);
 		/* If the buttonPressed was the leftButton.... */
+		panel.add(lebox);
+		song.play();
 		if (buttonPressed==(leftButton)){
 			leftButton.setPreferredSize(SMALL);
 			rightButton.setPreferredSize(BIG);
+			rightButton.setText("I told you");
 		}
+
 		else if (buttonPressed==(rightButton)) {
 			rightButton.setPreferredSize(SMALL);
 			leftButton.setPreferredSize(BIG);
 			leftButton.setText("You should have listened");
 		}
-		frame.add(lebox);
+
 		// Set the text of the rightButton to "No, click Me!"
 		// Set the PREFERRED size of the rightButton to BIG
 		// Set the text of the leftButton to "Click Me!"
 		// Set the PREFERRED size of the leftButton to SMALL
 
 		
-		frame.repaint();
+	//	frame.repaint();
 		
 		
 		/* If the buttonPressed was the rightButton, do the opposite. */
 
-		//frame.pack();
+		frame.pack();
 	}
 	static private Component createImage(String imageUrl) {
 		JLabel imageLabel = new JLabel();
-		URL url;
-		try {
-			url = new URL(imageUrl);
-			Icon icon = new ImageIcon(url);
-			imageLabel.setIcon(icon);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			JOptionPane.showMessageDialog(null, "I can't find your image!!");
-		}
+//			url = new URL(imageUrl);
+					Icon icon = new ImageIcon(imageUrl);
+					imageLabel.setIcon(icon);
 
 		return imageLabel;
 	}
+    class Song extends Sound {
+        public Song(String songAddress) {
+            super(songAddress);
+        }
 
+        @Override
+        public void play() {
+            if( !super.isPlaying() ) {
+                System.out.println("playing");
+                super.play();
+            }
+        }
+    }
 }
+
