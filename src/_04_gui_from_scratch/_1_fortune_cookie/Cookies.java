@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -21,16 +22,41 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class Cookies {
+public class Cookies implements ActionListener {
+	
+	JFrame ahhhhh = new JFrame();
+	JPanel helpme = new JPanel();
+	JButton wodent = new JButton();
+	
 	public void showButton() {
 		System.out.println("Button clicked");
+		
+		
+		ahhhhh.setVisible(true);
+		ahhhhh.add(wodent);
+		ahhhhh.pack();
+		wodent.addActionListener(this);
+		
 	}
 
-	public static void main(String[] args) {
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		JFrame ah = new JFrame();
-		ah.setVisible(true);
-		JPanel helpme = new JPanel();
+		int rand = new Random().nextInt(4)+1;
+		if (rand==1) {
+			JOptionPane.showMessageDialog(null, "Time to retire from life");
+		}
+		if (rand==2) {
+			JOptionPane.showMessageDialog(null, "You will receive ebola in 5 minutes");
+		}
+		if (rand==3) {
+			JOptionPane.showMessageDialog(null, "Get divorced");
+		}
+		if (rand==4) {
+			JOptionPane.showMessageDialog(null, "Go broke");
+		}
 	}
+	 
+
 
 }

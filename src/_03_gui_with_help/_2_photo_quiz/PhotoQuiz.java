@@ -53,7 +53,7 @@ public class PhotoQuiz {
 		quiz.add(flamingo);
 		quiz.pack();
 		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA = JOptionPane.showInputDialog("who is this man?");
-		if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Albert Einstein")) {
+		if (AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("Albert Einstein")||AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("albert")||AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.equals("einstein")) {
 			JOptionPane.showMessageDialog(null, "Correcto");
 		} else {
 			JOptionPane.showMessageDialog(null, "You won't go to college! :(");
@@ -68,6 +68,7 @@ public class PhotoQuiz {
 		} else {
 			JOptionPane.showMessageDialog(null, "You won't go to college! :(");
 			System.exit(0);
+		}
 		}
 		// g
 		// 5. call the pack() method on the quiz window
@@ -91,7 +92,7 @@ public class PhotoQuiz {
 		// 13. ask another question
 
 		// 14+ check answer, say if correct or incorrect, etc.
-	}
+	
 
 	static private Component createImage(String imageUrl) {
 		JLabel imageLabel = new JLabel();
