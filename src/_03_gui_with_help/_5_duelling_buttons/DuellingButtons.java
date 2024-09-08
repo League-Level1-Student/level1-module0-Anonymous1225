@@ -30,7 +30,7 @@ public class DuellingButtons implements ActionListener {
 
 	Dimension BIG = new Dimension(400, 400);
 	Dimension SMALL = new Dimension(200, 200);
-    Song song = new Song("musicbox.mp3");
+    Song song = new Song("src/_03_gui_with_help/_5_duelling_buttons/musicbox.mp3");
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	String freddy="src/_03_gui_with_help/_5_duelling_buttons/Power_outage.png";
@@ -113,4 +113,3 @@ public class DuellingButtons implements ActionListener {
         }
     }
 }
-
