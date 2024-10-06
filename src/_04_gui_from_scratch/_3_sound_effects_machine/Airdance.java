@@ -16,6 +16,9 @@ public class Airdance implements ActionListener {
 	JFrame beth = new JFrame();
 	JPanel polly = new JPanel();
 	JButton GiGi = new JButton();
+	JButton nacho = new JButton();
+	boolean
+	boolean capybara= false;
 	public void run() {
 		// TODO Auto-generated method stub
 		beth.setVisible(true);
@@ -25,14 +28,15 @@ public class Airdance implements ActionListener {
 		GiGi.addActionListener(this);
 		beth.pack();
 	}
-	public void actionPerformed(ActionEvent arg0) {
-
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==GiGi)
 		System.out.println("UwU");
+		capybara=true;
 		}
-	
+
 
 	private void playSound(String soundFile) {
-		String path = "src/_03_gui_from_scratch/_3_sound_effects_machine/";
+		String path = "src/_04_gui_from_scratch/_3_sound_effects_machine/";
 			File sound = new File(path+soundFile);
 			if (sound.exists()) {
 				new Thread(() -> {
@@ -52,4 +56,4 @@ public class Airdance implements ActionListener {
 		
 	}
     
-}
+	}
