@@ -17,24 +17,39 @@ public class Airdance implements ActionListener {
 	JPanel polly = new JPanel();
 	JButton GiGi = new JButton();
 	JButton nacho = new JButton();
-	boolean
+	JButton Pheobe = new JButton();
 	boolean capybara= false;
 	public void run() {
 		// TODO Auto-generated method stub
 		beth.setVisible(true);
 		beth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		polly.add(GiGi);
+		polly.add(nacho);
+		polly.add(Pheobe);
 		beth.add(polly);
+		GiGi.setText("Pipe");
+		nacho.setText("laugh");
+		Pheobe.setText("fnaf4");
 		GiGi.addActionListener(this);
+		nacho.addActionListener(this);
+		Pheobe.addActionListener(this);
 		beth.pack();
 	}
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==GiGi)
+		if(e.getSource()==GiGi) {
 		System.out.println("UwU");
 		capybara=true;
+		playSound("pipe.wav");
 		}
-
-
+		if(e.getSource()==nacho) {
+			System.out.println("UwU");
+			playSound("laugh.wav");
+		}
+		if(e.getSource()==Pheobe) {
+			System.out.println("UwU");
+			playSound("fnaf4.wav");
+		}
+	}
 	private void playSound(String soundFile) {
 		String path = "src/_04_gui_from_scratch/_3_sound_effects_machine/";
 			File sound = new File(path+soundFile);
